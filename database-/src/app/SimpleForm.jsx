@@ -11,7 +11,8 @@ export default function SimpleForm() {
 
 async function addDataToFireStore(name, message) {
 try {
-    const docRef = await addDoc(collection, (db, "message"), {
+    const docRef = await addDoc(collection(db, "message"), {
+        
         name: name,
         message: message
     })
